@@ -227,7 +227,7 @@ do
         ["Tahoma"] = "meimei ware/fonts/tahoma_font",
         ["Ubuntu"] = nil
     };
-    objects["fonts_key"] = {"Smallest pixel", "Pixel arial", "Proggy tiny", "Proggy clean", "Monocraft", "Tahoma", "Ubuntu"});
+    objects["fonts_key"] = {"Smallest pixel", "Pixel arial", "Proggy tiny", "Proggy clean", "Monocraft", "Tahoma", "Ubuntu"};
 
 
 
