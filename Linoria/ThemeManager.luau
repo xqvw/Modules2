@@ -86,11 +86,11 @@ do
 
 	-- // ( Ui )
 	function ThemeManager:CreateThemeManager(groupbox)
-		groupbox:AddLabel("main color"):AddColorPicker("MainColor", { Title = "main color", Default = self.Library.MainColor });
-		groupbox:AddLabel("background color"):AddColorPicker("BackgroundColor", { Title = "background color", Default = self.Library.BackgroundColor });
-		groupbox:AddLabel("outline color"):AddColorPicker("OutlineColor", { Title = "outline color", Default = self.Library.OutlineColor });
-		groupbox:AddLabel("accent color"):AddColorPicker("AccentColor", { Title = "accent color", Default = self.Library.AccentColor });
-		groupbox:AddLabel("font color"):AddColorPicker("FontColor", { Title = "font color", Default = self.Library.FontColor });
+		groupbox:AddLabel("Main color"):AddColorPicker("MainColor", { Title = "Main color", Default = self.Library.MainColor });
+		groupbox:AddLabel("Background color"):AddColorPicker("BackgroundColor", { Title = "Background color", Default = self.Library.BackgroundColor });
+		groupbox:AddLabel("Outline color"):AddColorPicker("OutlineColor", { Title = "Outline color", Default = self.Library.OutlineColor });
+		groupbox:AddLabel("Accent color"):AddColorPicker("AccentColor", { Title = "Accent color", Default = self.Library.AccentColor });
+		groupbox:AddLabel("Font color"):AddColorPicker("FontColor", { Title = "Font color", Default = self.Library.FontColor });
 		groupbox:AddDivider();
 
 
@@ -104,12 +104,12 @@ do
 		end);
 
 
-		groupbox:AddDropdown("ThemeManager_ThemeList", { Text = "selected theme", Values = default_themes, Default = 1,
+		groupbox:AddDropdown("ThemeManager_ThemeList", { Text = "Selected theme", Values = default_themes, Default = 1,
 			Callback = function(value)
 				self:ApplyTheme(value);
 			end;
 		});
-		groupbox:AddButton({ Text = "set as default", 
+		groupbox:AddButton({ Text = "Set as default", 
 			Func = function()
 				self:SaveDefault(Options.ThemeManager_ThemeList.Value);
 				self.Library:Notify("Set default theme to " .. Options.ThemeManager_ThemeList.Value);
@@ -117,30 +117,30 @@ do
 		});
 
 		groupbox:AddDivider();
-		groupbox:AddInput("ThemeManager_CustomThemeName", { Text = "custom theme name" });
+		groupbox:AddInput("ThemeManager_CustomThemeName", { Text = "Custom theme name" });
 		groupbox:AddDropdown("ThemeManager_CustomThemeList", { Text = "selected custom theme", Values = self:ReloadCustomThemes(), AllowNull = true, Default = 1 });
 
-		groupbox:AddButton({ Text = "save theme", 
+		groupbox:AddButton({ Text = "Save theme", 
 			Func = function() 
 				self:SaveCustomTheme(Options.ThemeManager_CustomThemeName.Value);
 				Options.ThemeManager_CustomThemeList:SetValues(self:ReloadCustomThemes());
 				Options.ThemeManager_CustomThemeList:SetValue(nil);
 			end;
-		}):AddButton({ Text = "load theme", 
+		}):AddButton({ Text = "Load theme", 
 			Func = function() 
 				self:ApplyTheme(Options.ThemeManager_CustomThemeList.Value);
 			end;
 		});
 
 
-		groupbox:AddButton({ Text = "refresh list",
+		groupbox:AddButton({ Text = "Refresh list",
 			Func = function()
 				Options.ThemeManager_CustomThemeList:SetValues(self:ReloadCustomThemes());
 				Options.ThemeManager_CustomThemeList:SetValue(nil);
 			end;
 		});
 
-		groupbox:AddButton({Text = "set as default", 
+		groupbox:AddButton({Text = "Set as default", 
 			Func = function()
 				if (Options.ThemeManager_CustomThemeList.Value ~= nil and Options.ThemeManager_CustomThemeList.Value ~= "") then
 					self:SaveDefault(Options.ThemeManager_CustomThemeList.Value);
