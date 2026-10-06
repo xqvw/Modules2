@@ -44,7 +44,7 @@ local Library = {
 	DependencyBoxes = {};
 	NotificationStyle = {
 		Transparency = 0;
-		Position = "Center" -- // Left, Right, Center
+		Position = "Center"; -- // Left, Right, Center
 		BarSide = "Top"; -- // Left, Right, Bottom, Top
 	};
 
