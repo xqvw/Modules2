@@ -3239,9 +3239,10 @@ function Library:SetNotifyPosition(Position)
 		Library.NotificationAreaHolder.Position = UDim2.fromOffset(viewport.X - 306, 39);
 	elseif (pos == "center") then
 		Library.NotificationAreaHolder.AnchorPoint = Vector2.new(0.5, 0);
-		Library.NotificationAreaHolder.Position = UDim2.fromOffset(viewport.X / 2, viewport.Y + 25);
+		Library.NotificationAreaHolder.Position = UDim2.fromOffset(viewport.X / 2, 39);
 	end;
 end;
+
 
 function Library:SetWatermarkVisibility(Bool)
 	Library.Watermark.Visible = Bool;
@@ -3285,6 +3286,7 @@ end;
 
 local notification_clone;
 do
+	
 	local NotifyOuter = Library:Create('Frame', {
 		BorderColor3 = Color3.new(0, 0, 0);
 		Position = UDim2.new(0, 100, 0, 10);
@@ -3518,6 +3520,10 @@ function Library:Notify(Text, Time)
 	NotifyOuter.Name = _char(256 - _max(1, #Text % 256));
 	NotifyOuter.Size = udim2_new(0, 0, 0, YSize);
 	NotifyOuter.Transparency = transparency;
+
+
+	local pos = Library.NotificationStyle.Position:lower();
+	NotifyOuter.Position = UDim2.new(0, pos == "center" and 0 or 100, 0, 10);
 
 	local NotifyInner = NotifyOuter.inner;
 	NotifyInner.BackgroundColor3 = main;
