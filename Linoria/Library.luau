@@ -3235,10 +3235,10 @@ function Library:SetNotifyPosition(Position)
 		Library.NotificationAreaHolder.Position = UDim2.new(0, 6, 0, 39);
 	elseif (pos == "right") then
 		Library.NotificationAreaHolder.AnchorPoint = Vector2.new(1, 0);
-		Library.NotificationAreaHolder.Position = UDim2.new(1, -6, 0, 39);
+		Library.NotificationAreaHolder.Position = UDim2.new(1, -6, 0, -39);
 	elseif (pos == "center") then
 		Library.NotificationAreaHolder.AnchorPoint = Vector2.new(0.5, 0);
-		Library.NotificationAreaHolder.Position = UDim2.new(0.5, 0, 0, 39);
+		Library.NotificationAreaHolder.Position = UDim2.new(0.5, 0, 0, 0);
 	end;
 end;
 
