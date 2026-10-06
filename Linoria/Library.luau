@@ -3226,7 +3226,7 @@ end;
 
 
 function Library:SetNotifyPosition(Position)
-	Library.NotifyPosition = Position;
+	Library.NotificationStyle.Position = Position;
 
 	local pos = Position:lower();
 
@@ -3241,6 +3241,7 @@ function Library:SetNotifyPosition(Position)
 		Library.NotificationArea.Position = UDim2.new(0.5, 0, 0, 1);
 	end;
 end;
+
 
 function Library:SetWatermarkVisibility(Bool)
 	Library.Watermark.Visible = Bool;
