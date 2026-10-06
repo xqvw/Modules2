@@ -3239,9 +3239,9 @@ function Library:SetNotifyPosition(Position)
 		Library.NotificationAreaHolder.AnchorPoint = Vector2.new(0, 0);
 		Library.NotificationAreaHolder.Position = UDim2.fromOffset(viewport.X - 306, 39);
 		Library.NotificationAreaHolder.Size = UDim2.new(0, 300, 0, 200);
-		elseif (pos == "center") then
+	elseif (pos == "center") then
 		Library.NotificationAreaHolder.AnchorPoint = Vector2.new(0.5, 0);
-		Library.NotificationAreaHolder.Position = UDim2.new(0.5, 0, 0, 39);
+		Library.NotificationAreaHolder.Position = UDim2.fromOffset(viewport.X / 2, 39);
 		Library.NotificationAreaHolder.Size = UDim2.new(0, 300, 0, 200);
 	end;
 end;
