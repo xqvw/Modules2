@@ -3232,13 +3232,13 @@ function Library:SetNotifyPosition(Position)
 
 	if (pos == "left") then
 		Library.NotificationArea.AnchorPoint = Vector2.new(0, 0);
-		Library.NotificationArea.Position = UDim2.fromOffset(6, 6);
+		Library.NotificationArea.Position = UDim2.new(0, 6, 0, 1);
 	elseif (pos == "right") then
 		Library.NotificationArea.AnchorPoint = Vector2.new(1, 0);
-		Library.NotificationArea.Position = UDim2.new(1, -6, 0, 6);
+		Library.NotificationArea.Position = UDim2.new(1, -6, 0, 1);
 	elseif (pos == "center") then
 		Library.NotificationArea.AnchorPoint = Vector2.new(0.5, 0);
-		Library.NotificationArea.Position = UDim2.new(0.5, 0, 0, 6);
+		Library.NotificationArea.Position = UDim2.new(0.5, 0, 0, 1);
 	end;
 end;
 
