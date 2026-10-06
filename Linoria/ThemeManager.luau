@@ -17,7 +17,7 @@ do
 			2,
 			http_service:JSONDecode('{"FontColor":"ffffff","MainColor":"181818","AccentColor":"4777b6","BackgroundColor":"141414","OutlineColor":"1f1f1f"}')
 		},
-		['Fatality'] = { 3, http_service:JSONDecode('{"FontColor":"ffffff","MainColor":"1e1842","AccentColor":"c50754","BackgroundColor":"191335","OutlineColor":"3c355d"}')},
+		["Perception"] = { 3, http_service:JSONDecode('{"FontColor":"b6b6b6","MainColor":"141414","AccentColor":"668994","BackgroundColor":"171717","OutlineColor":"181818"}')},
 		['Jester'] = { 4, http_service:JSONDecode('{"FontColor":"ffffff","MainColor":"242424","AccentColor":"db4467","BackgroundColor":"1c1c1c","OutlineColor":"373737"}')},
 		['Mint'] = { 5, http_service:JSONDecode('{"FontColor":"ffffff","MainColor":"242424","AccentColor":"3db488","BackgroundColor":"1c1c1c","OutlineColor":"373737"}')},
 		['Tokyo Night'] = { 6, http_service:JSONDecode('{"FontColor":"ffffff","MainColor":"191925","AccentColor":"6759b3","BackgroundColor":"16161f","OutlineColor":"323232"}')},
