@@ -44,11 +44,12 @@ local Library = {
 	DependencyBoxes = {};
 	NotificationStyle = {
 		Transparency = 0;
-		BarSide = "Left"; -- // Left, Right, Bottom, Top
+		Position = "Center" -- // Left, Right, Center
+		BarSide = "Top"; -- // Left, Right, Bottom, Top
 	};
 
 	KeypickerListVisible = true;
-	KeypickerListMode = "All"; -- // Active, Toggled, Alls
+	KeypickerListMode = "Toggled"; -- // Active, Toggled, Alls
 	Events = {};
 	Signals = {};
 	ScreenGui = ScreenGui;
@@ -3220,6 +3221,24 @@ do
 		Library.KeyPickerListTransparency = value;
 		KeybindOuter.BackgroundTransparency = value;
 		KeybindInner.BackgroundTransparency = value;
+	end;
+end;
+
+
+function Library:SetNotifyPosition(Position)
+	Library.NotifyPosition = Position;
+
+	local pos = Position:lower();
+
+	if (pos == "left") then
+		Library.NotificationArea.AnchorPoint = Vector2.new(0, 0);
+		Library.NotificationArea.Position = UDim2.fromOffset(6, 6);
+	elseif (pos == "right") then
+		Library.NotificationArea.AnchorPoint = Vector2.new(1, 0);
+		Library.NotificationArea.Position = UDim2.new(1, -6, 0, 6);
+	elseif (pos == "center") then
+		Library.NotificationArea.AnchorPoint = Vector2.new(0.5, 0);
+		Library.NotificationArea.Position = UDim2.new(0.5, 0, 0, 6);
 	end;
 end;
 
