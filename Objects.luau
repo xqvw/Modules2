@@ -218,7 +218,7 @@ do
 
 
     -- // ( Fonts )
-    rawset(objects, "fonts", {
+    objects["fonts"] = {
         ["Smallest pixel"] = "meimei ware/fonts/smallestpixel_font",
         ["Pixel arial"] = "meimei ware/fonts/pixel_arial_font",
         ["Proggy tiny"] = "meimei ware/fonts/proggy_tiny_font",
@@ -226,19 +226,19 @@ do
         ["Monocraft"] = "meimei ware/fonts/monocraft_font",
         ["Tahoma"] = "meimei ware/fonts/tahoma_font",
         ["Ubuntu"] = nil
-    });
-    rawset(objects, "fonts_key", {"Smallest pixel", "Pixel arial", "Proggy tiny", "Proggy clean", "Monocraft", "Tahoma", "Ubuntu"});
+    };
+    objects["fonts_key"] = {"Smallest pixel", "Pixel arial", "Proggy tiny", "Proggy clean", "Monocraft", "Tahoma", "Ubuntu"});
 
 
 
     -- // ( Ambience )
-    rawset(objects, "ambience_sounds", {
+    objects["ambience_sounds"] = {
         ["Rain"] = "rbxassetid://9112854440",
         ["Wind"] = "rbxassetid://6670092634",
         ["Night"] = "rbxassetid://179507208",
         ["Day"] = "rbxassetid://9112738322"
-    });
-    rawset(objects, "ambience_key", {"Rain", "Wind", "Night", "Day"});
+    };
+    objects["ambience_key"] = {"Rain", "Wind", "Night", "Day"};
 
 
 
