@@ -3077,6 +3077,7 @@ do
 	Library:Create('UIListLayout', {
 		Padding = UDim.new(0, 4);
 		FillDirection = Enum.FillDirection.Vertical;
+		HorizontalAlignment = Enum.HorizontalAlignment.Center;
 		SortOrder = Enum.SortOrder.LayoutOrder;
 		Parent = Library.NotificationArea;
 	});
@@ -3238,8 +3239,9 @@ function Library:SetNotifyPosition(Position)
 		Library.NotificationAreaHolder.AnchorPoint = Vector2.new(0, 0);
 		Library.NotificationAreaHolder.Position = UDim2.fromOffset(viewport.X - 306, 39);
 	elseif (pos == "center") then
-		Library.NotificationAreaHolder.AnchorPoint = Vector2.new(0, 0);
-		Library.NotificationAreaHolder.Position = UDim2.fromOffset(viewport.X / 2 - 150, 39);
+		Library.NotificationAreaHolder.AnchorPoint = Vector2.new(0.5, 0);
+		Library.NotificationAreaHolder.Size = UDim2.fromOffset(300, 200);
+		Library.NotificationAreaHolder.Position = UDim2.fromOffset(viewport.X / 2, 39);
 	end;
 end;
 
