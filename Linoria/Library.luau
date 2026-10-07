@@ -45,8 +45,6 @@ local Library = {
 	DependencyBoxes = {};
 	NotificationStyle = {
 		Transparency = 0;
-		Position = "Center"; -- // Left, Right, Center
-		BarSide = "Top"; -- // Left, Right, Bottom, Top
 	};
 
 	KeypickerListVisible = true;
@@ -3246,21 +3244,6 @@ function Library:SetWatermark(Text)
 	Library.WatermarkText.Text = Text;
 end;
 
-local NotifySettings = {
-	BarPosition = {
-		["Top"] = UDim2.new(0, -1, 0, 0);
-		["Left"] = UDim2.new(0, -1, 0, -1);
-		["Right"] = UDim2.new(1, -2, 0, -1);
-		["Bottom"] = UDim2.new(0, -1, 1, -2);
-	};
-	BarSize = {
-		["Top"] = UDim2.new(1, 3, 0, 2);
-		["Left"] = UDim2.new(0, 3, 1, 2);
-		["Right"] = UDim2.new(0, 3, 1, 2);
-		["Bottom"] = UDim2.new(1, 3, 0, 2);
-	};
-};
-
 local NotificationStyle = Library.NotificationStyle;
 
 local _char, _max = string.char, math.max;
@@ -3530,8 +3513,8 @@ function Library:Notify(Text, Time)
 
 	local LeftColor = NotifyOuter.bar;
 	LeftColor.BackgroundColor3 = accent;
-	LeftColor.Size = NotifySettings.BarSize[NotificationStyle.BarSide] or udim2_new(0, 3, 1, 2);
-	LeftColor.Position = NotifySettings.BarPosition[NotificationStyle.BarSide];
+	LeftColor.Size = UDim2.new(1, 3, 0, 2);
+	LeftColor.Position = UDim2.new(0, -1, 0, 0);
 
 	NotifyOuter.Parent = Library.NotificationArea;
 
