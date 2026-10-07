@@ -3060,7 +3060,7 @@ do
 	Library.NotificationAreaHolder = Library:Create('Frame', {
 		BackgroundTransparency = 1;
 		AnchorPoint = Vector2.new(0.5, 0);
-		Position = UDim2.fromOffset(viewport.X / 2, viewport.Y / 2 + 25),
+		Position = UDim2.fromOffset(viewport.X / 2, viewport.Y / 2 + 40),
 		Size = UDim2.new(0, 2560, 0, 200);
 		ZIndex = 100;
 		Parent = ScreenGui;
