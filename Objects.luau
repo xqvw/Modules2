@@ -187,7 +187,7 @@ do
             }
         }
     };
-    objects["hit_effects_key"] = {"Bubble", "Clone", "Sparkles", "Orbs", "Vortex"};
+    objects["hit_effects_key"] = {"Bubble", "Clone", "Fortnite damage", "Sparkles", "Orbs", "Vortex"};
 
 
 
