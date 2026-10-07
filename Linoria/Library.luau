@@ -13,6 +13,7 @@ local Mouse = LocalPlayer:GetMouse();
 local RunService = cloneref(game:GetService("RunService"));
 local RenderStepped = RunService.RenderStepped;
 local TweenService = cloneref(game:GetService("TweenService"));
+local viewport = cloneref(game:GetService("Workspace")).CurrentCamera.ViewportSize;
 
 local ScreenGui = Instance.new("ScreenGui");
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
@@ -3060,11 +3061,18 @@ end;
 do
 	Library.NotificationAreaHolder = Library:Create('Frame', {
 		BackgroundTransparency = 1;
-		Position = UDim2.new(0, 0, 0, 39);
+		AnchorPoint = Vector2.new(0.5, 0);
+		Position = UDim2.fromOffset(viewport.X / 2, 39),
 		Size = UDim2.new(0, 2560, 0, 200);
 		ZIndex = 100;
 		Parent = ScreenGui;
 	});
+
+
+	--Library.NotificationAreaHolder.Size = UDim2.fromOffset(300, 200);
+
+
+	-- // here 
 
 	Library.NotificationArea = Library:Create('Frame', {
 		BackgroundTransparency = 1;
@@ -3224,29 +3232,6 @@ do
 		KeybindInner.BackgroundTransparency = value;
 	end;
 end;
-
-
-function Library:SetNotifyPosition(Position)
-	Library.NotificationStyle.Position = Position;
-
-	local pos = Position:lower();
-	local viewport = workspace.CurrentCamera.ViewportSize;
-
-	if (pos == "left") then
-		Library.NotificationAreaHolder.AnchorPoint = Vector2.new(0, 0);
-		Library.NotificationAreaHolder.Position = UDim2.fromOffset(6, 39);
-	elseif (pos == "right") then
-		Library.NotificationAreaHolder.AnchorPoint = Vector2.new(0, 0);
-		Library.NotificationAreaHolder.Position = UDim2.fromOffset(viewport.X - 306, 39);
-	elseif (pos == "center") then
-		Library.NotificationAreaHolder.AnchorPoint = Vector2.new(0.5, 0);
-		Library.NotificationAreaHolder.Size = UDim2.fromOffset(300, 200);
-		Library.NotificationAreaHolder.Position = UDim2.fromOffset(viewport.X / 2, 39);
-	end;
-end;
-
-
-Library:SetNotifyPosition(Library.NotificationStyle.Position);
 
 
 function Library:SetWatermarkVisibility(Bool)
