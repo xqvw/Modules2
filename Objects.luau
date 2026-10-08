@@ -336,6 +336,7 @@ do
 
     -- // ( Misc stuff )
     objects["materials_key"] = {"Neon", "ForceField"};
+    objects["highlight_mode_key"] = {"Occluded", "AlwaysOnTop"};
     objects["body_parts_key"] = {
         "Head", "UpperTorso", "LowerTorso",
         "LeftUpperArm", "LeftLowerArm", "RightUpperArm", "RightLowerArm",
